@@ -5,6 +5,30 @@ import hello
 class TestHello(unittest.TestCase):
     def test_hello(self):
         self.assertEqual(hello.hello(), "Hello, world!")
+        self.assertNotEqual(hello.hello(), "hi, world!")
+        self.assertNotEqual(hello.hello(), "hello, wrld!")
+
+    def test_add(self):
+        self.assertEqual(hello.add(1, 2), 3)
+        self.assertNotEqual(hello.add(2, 5), 3)
+        self.assertNotEqual(hello.add(3, 5), 4)
+
+    def test_sub(self):
+        self.assertEqual(hello.sub(2, 2), 0)
+        self.assertNotEqual(hello.sub(7, 5), 1)
+        self.assertNotEqual(hello.sub(7, 6), 9)
+
+
+    def test_mul(self):
+        self.assertEqual(hello.mul(1, 2), 2)
+        self.assertNotEqual(hello.mul(2, 5), 3)
+        self.assertNotEqual(hello.mul(4, 6), 7)
+
+    def test_div(self):
+        self.assertEqual(hello.div(1, 1), 1)
+        self.assertNotEqual(hello.div(6, 2), 1)
+        self.assertNotEqual(hello.div(10, 5), 3)
+
 
     # def test_sin(self):
     #     self.assertEqual(hello.sin(0), 0)
